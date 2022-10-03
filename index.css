@@ -4,11 +4,8 @@
 } */
 
 h1 { 
-    font-family: Monofett; font-size: 30px; 
-    font-style: normal; 
-    font-variant: normal; 
-    font-weight: 700; 
-    line-height: 30px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
 } 
     
 h3 { font-family: Monofett; font-size: 14px; font-style: normal; font-variant: normal; 
