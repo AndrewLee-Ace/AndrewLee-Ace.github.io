@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Project</title>
+    <link rel="stylesheet" href="form.css">
+    <!-- <script src="form.js"></script> -->
+   
+</head>
+<body id="body">
+
+    <script>
+        localStorage.fname = document.getElementById('fname').value;
+        localStorage.lname = document.getElementById('lname').value;
+        localStorage.bgcolor = document.getElementById('bgcolor').value;
+        localStorage.textcolor = document.getElementById('fontcolor').value;
+        localStorage.fontsize = document.getElementById('myRange').value
+        localStorage.fontfam = document.getElementById('body').fontFamily.value;
+    </script>
+    <form id="frm1">
+        <div id="firstname">
+            <label for="fname">First Name:</label><br>
+            <input type="text" name="fname" id="fname" value="">
+        </div>
+
+        <br>
+
+        <div id="lastname">
+             <label for="lname">Last Name:</label><br>
+            <input type="text" name="lname" id="lname" value="">
+        </div>
+
+        <br>
+        
+        <div id="backgroundcolor">
+            <label for="bgcolor">Select a Background Color:</label><br>
+            <input type="color" name="bgcolor" id="bgcolor" value="#ffffff"><br>
+        </div>
+
+        <script>
+            document.getElementById("bgcolor").addEventListener("change", setBackground);
+
+            function setBackground() { 
+                let bgc = document.getElementById('bgcolor').value;
+                document.body.style.backgroundColor = bgc;
+                };
+        </script>
+
+        <br>
+
+        <div id="textcolor">
+            <label for="color">Select a Font Color:</label><br>
+            <input type="color" name="color" id="color" value="#000"><br>
+        </div>
+
+        <script>
+            document.getElementById("color").addEventListener("change", setColor);
+
+            function setColor(){
+                let c = document.getElementById("color").value;
+                document.body.style.color = c;
+            };
+        </script>
+
+        <br>
+            
+
+        <div class="slidecontainer">
+            <input type="range" min="12" max="48" value="18" class="slider" id="myRange">
+            <p>Value: <span id="demo"></span></p>
+        </div>
+
+        <br>
+
+        <script>
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+            
+            function setFontSize(){
+                let s = parseInt(slider.value);
+                document.body.style.fontSize = (`${s}px`);
+            }
+
+            slider.addEventListener("change", setFontSize);
+            
+        </script>
+        <input type="radio" name="font" value="Times New Roman" onchange="setTimes(this.value)" checked>
+        <label for="times-nr">times-new-roman</label><br>
+        <input type="radio" name="font" value="Tahoma" onchange="setTahoma(this.value)">
+        <label for="tahoma">tahoma</label><br>
+        <input type="radio" name="font" value="Georgia" onchange="setGeorgia(this.value)">
+        <label for="georgia">georgia</label>
+
+        <script>
+            function setFont(f){
+                document.getElementById('body').style.fontFamily  = f;
+            }
+        </script>
+
+        <br><br>
+        
+        <!-- <input type="reset" id="reset" value="Reset the Form"> -->
+        <div>
+            <input type="reset">
+        </div>
+    </form>
+    
+
+</body>
+</html>
