@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sound Machine</title>
+    <!-- <script src="soundMachine.js"></script> -->
+</head>
+<body>
+    <h1 style="text-align: center;">Sound Machine</h1>
+    
+    <audio id="horse">
+        <source src="../horse.mp3" type="audio/mpeg">
+      
+        <source src="../dog.mp3" type="audio/mpeg">
+        <source src="../cat.wav" type="audio/mpeg">
+        <source src="../cow.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="pig">
+        <source src="../pig.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="dog">
+        <source src="../dog.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="cat">
+        <source src="../cat.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="cow">
+        <source src="../cow.wav" type="audio/mpeg">
+    </audio>
+   
+    <div style="background-color: deepskyblue; height: 300px; width: 500px; padding: 180px;">
+        <button onclick="playHorse()" type="button">Play Horse</button>
+        <button onclick="playPig()" type="button"> Play Pig</button>
+        <button onclick="playDog()" type="button">Play Dog</button>
+        <button onclick="playCat()" type="button">Play Cat</button>
+        <button onclick="playCow()" type="button">Play Cow</button>
+    </div>
+
+    <script>
+        var x = document.getElementById("horse");
+        var y = document.getElementById("pig");
+        var z = document.getElementById("dog");
+        var w = document.getElementById("cat");
+        var v = document.getElementById("cow");
+
+
+function playHorse(){
+    x.play();
+}
+
+function playDog(){
+    z.play();
+}
+
+function playCat(){
+    w.play();
+}
+
+function playCow(){
+    v.play();
+}
+
+function playPig(){
+    y.play();
+}
+    </script>
+    
+    <a href="https://andrewlee-ace.github.io">Visit my Website!</a>
+</body>
+</html>
